@@ -7,7 +7,7 @@ import {
   StyleSheet,
   FlatList,
 } from "react-native";
-import AnimaionsBallResize from "../../components/animations/AnimaionsBallResize";
+import AnimationsPenResponder from "../../components/animations/AnimationsPenResponder";
 import AnimatedFlatList from "../../components/list/animated-flat-list/AnimatedFlatList";
 
 const DATA = [
@@ -64,8 +64,13 @@ const DATA = [
 function renderItem({item}) {
   return <Task id={item.title}></Task>;
 }
+//return <AnimaionsBallResize></AnimaionsBallResize>;
 
 export default function HomeScreen() {
-  return <AnimaionsBallResize></AnimaionsBallResize>;
-  //return <AnimatedFlatList data={DATA}></AnimatedFlatList>;
+  return (
+    <View>
+      <AnimatedFlatList data={DATA}></AnimatedFlatList>
+      <AnimationsPenResponder></AnimationsPenResponder>
+    </View>
+  );
 }
