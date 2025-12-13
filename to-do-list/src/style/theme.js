@@ -1,3 +1,5 @@
+import {Dimensions} from "react-native";
+
 export const COLORS = {
   // Brand
   primary: "#FFB56B",
@@ -81,3 +83,32 @@ export const MARGINS = {
   xl: 32,
   xxl: 48,
 };
+
+export const HEIGHT = {
+  none: 0,
+  xs: 50,
+  sm: 100,
+  md: 150,
+  lg: 200,
+  xl: 300,
+  xxl: 400,
+};
+
+export const ALIGN = {
+  center: "center",
+};
+
+export const WIDTH = {
+  none: 0,
+  xxs: 0.7,
+  xs: 50,
+  sm: 100,
+  md: 150,
+  lg: 200,
+  xl: 300,
+  xxl: 400,
+};
+
+export const SCREEN_WIDTH = Dimensions.get("window").width;
+
+

@@ -8,8 +8,8 @@ import {
   FlatList,
 } from "react-native";
 import AnimationsPenResponder from "../../components/animations/AnimationsPenResponder";
-import AnimatedFlatList from "../../components/list/animated-flat-list/AnimatedFlatList";
-
+import AnimatedFlatList from "../../components/list/AnimatedFlatList";
+import TaskCard from "../../components/card/task-card/task-card";
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
@@ -69,7 +69,10 @@ function renderItem({item}) {
 export default function HomeScreen() {
   return (
     <View>
-      <AnimatedFlatList data={DATA}></AnimatedFlatList>
+      <AnimatedFlatList
+        data={DATA}
+        renderItem={({item}) => <TaskCard>{item.title}</TaskCard>}
+      ></AnimatedFlatList>
       <AnimationsPenResponder></AnimationsPenResponder>
     </View>
   );
