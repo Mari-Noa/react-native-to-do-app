@@ -17,10 +17,10 @@ const Item = ({content}) => (
   </View>
 );
 
-export default function TaskCard({content}) {
+export default function TaskCard({content, style}) {
   return (
     <View>
-      <Card variant="medium_card" style={styles.task_card_pallet}>
+      <Card variant="medium_card" style={[styles.task_card_pallet, style]}>
         <Item content={content}></Item>
       </Card>
     </View>

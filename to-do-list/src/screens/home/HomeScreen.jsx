@@ -10,6 +10,8 @@ import {
 import AnimationsPenResponder from "../../components/animations/AnimationsPenResponder";
 import AnimatedFlatList from "../../components/list/AnimatedFlatList";
 import TaskCard from "../../components/card/task-card/task-card";
+import PressableCard from "../../components/card/pressable-card/pressable-card.jsx";
+
 const DATA = [
   {
     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
@@ -64,14 +66,20 @@ const DATA = [
 function renderItem({item}) {
   return <Task id={item.title}></Task>;
 }
-//return <AnimaionsBallResize></AnimaionsBallResize>;
 
 export default function HomeScreen() {
   return (
     <View>
+      <View>
+        <Text>HIHIIHIHIHI</Text>
+      </View>
       <AnimatedFlatList
         data={DATA}
-        renderItem={({item}) => <TaskCard>{item.title}</TaskCard>}
+        renderItem={({item}) => (
+          <PressableCard>
+            <TaskCard>{item.title}</TaskCard>
+          </PressableCard>
+        )}
       ></AnimatedFlatList>
       <AnimationsPenResponder></AnimationsPenResponder>
     </View>
