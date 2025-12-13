@@ -7,7 +7,7 @@ import {
   StyleSheet,
   FlatList,
 } from "react-native";
-
+import AnimaionsBallResize from "../../components/animations/AnimaionsBallResize";
 import AnimatedFlatList from "../../components/list/animated-flat-list/AnimatedFlatList";
 
 const DATA = [
@@ -66,5 +66,6 @@ function renderItem({item}) {
 }
 
 export default function HomeScreen() {
-  return <AnimatedFlatList data={DATA}></AnimatedFlatList>;
+  return <AnimaionsBallResize></AnimaionsBallResize>;
+  //return <AnimatedFlatList data={DATA}></AnimatedFlatList>;
 }
