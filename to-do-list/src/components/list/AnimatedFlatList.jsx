@@ -56,6 +56,7 @@ export default function AnimatedFlatList({data, renderItem}) {
         useNativeDriver: true,
       })}
       renderItem={({item, index}) => {
+      
         const {scale, translateY, opacity} = useCarouselAnimation(
           scrollX,
           index
@@ -83,14 +84,7 @@ const styles = StyleSheet.create({
     width: CARD_WIDTH,
     marginHorizontal: SPACING / 2,
   },
-  card: {
-    height: CARD_HEIGHT,
-    borderRadius: CARD_BORDER_RADIUS,
-    backgroundColor: COLORS.primary,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-  },
+
   title: {
     color: COLORS.white,
     fontSize: FONT_SIZES.title,

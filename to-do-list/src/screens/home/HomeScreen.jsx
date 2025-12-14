@@ -11,61 +11,53 @@ import AnimationsPenResponder from "../../components/animations/AnimationsPenRes
 import AnimatedFlatList from "../../components/list/AnimatedFlatList";
 import TaskCard from "../../components/card/task-card/task-card";
 import PressableCard from "../../components/card/pressable-card/pressable-card.jsx";
+import ImageCard from "../../components/card/image-card/image-card";
+import {SafeAreaView, SafeAreaProvider} from "react-native-safe-area-context";
+import {Asset} from "expo-asset";
 
+//uri: Asset.fromModule(require()).uri;
 const DATA = [
   {
-    id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-    title: "First Item",
-  },
-  {
     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-    title: "Second Item",
+    content: "Second Item",
+    uri: Asset.fromModule(require("../../assets/images/IMG_4640.jpg")).uri,
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "Third Item",
+    content: "Third Item",
+    uri: Asset.fromModule(require("../../assets/images/IMG_4639.jpg")).uri,
   },
   {
     id: "1",
-    title: "First Item",
+    content: "First Item",
+    uri: Asset.fromModule(require("../../assets/images/IMG_4519.jpg")).uri,
   },
   {
     id: "2",
-    title: "Second Item",
+    content: "Second Item",
+    uri: Asset.fromModule(require("../../assets/images/IMG_4346.jpg")).uri,
   },
   {
     id: "3",
-    title: "Third Item",
+    content: "Third Item",
+    uri: Asset.fromModule(require("../../assets/images/IMG_3995.jpg")).uri,
   },
   {
     id: "4",
-    title: "First Item",
+    content: "First Item",
+    uri: Asset.fromModule(require("../../assets/images/IMG_3833.jpg")).uri,
   },
   {
     id: "5",
-    title: "Second Item",
+    content: "Second Item",
+    uri: Asset.fromModule(require("../../assets/images/IMG_0755.jpg")).uri,
   },
   {
     id: "6",
-    title: "Third Item",
-  },
-  {
-    id: "8",
-    title: "First Item",
-  },
-  {
-    id: "9",
-    title: "Second Item",
-  },
-  {
-    id: "10",
-    title: "Third Item",
+    content: "Third Item",
+    uri: Asset.fromModule(require("../../assets/images/IMG_3385.jpg")).uri,
   },
 ];
-
-function renderItem({item}) {
-  return <Task id={item.title}></Task>;
-}
 
 export default function HomeScreen() {
   return (
@@ -77,7 +69,7 @@ export default function HomeScreen() {
         data={DATA}
         renderItem={({item}) => (
           <PressableCard>
-            <TaskCard>{item.title}</TaskCard>
+            <ImageCard content={item.content} uri={item.uri}></ImageCard>
           </PressableCard>
         )}
       ></AnimatedFlatList>

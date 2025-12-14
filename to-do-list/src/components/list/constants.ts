@@ -2,7 +2,7 @@
 import {Dimensions} from "react-native";
 
 export const SCREEN_WIDTH = Dimensions.get("window").width;
-export const CARD_WIDTH = SCREEN_WIDTH * 0.7;
+export const CARD_WIDTH = 300;
 export const SPACING = 5;
 
 // Colors

@@ -11,6 +11,7 @@ import {
   ALIGN,
   WIDTH,
   SCREEN_WIDTH,
+  SCREEN_HEIGHT,
 } from "../../style/theme";
 import {View} from "react-native";
 
@@ -19,10 +20,11 @@ export const Card = ({children, variant = "medium_card", style, ...props}) => (
     {children}
   </View>
 );
+
 const styles = StyleSheet.create({
   medium_card: {
     height: HEIGHT.lg,
-    width: SCREEN_WIDTH * WIDTH.xxs,
+    width: WIDTH.xxs,
     borderRadius: RADIUS.md,
     justifyContent: ALIGN.center,
     alignItems: ALIGN.center,
